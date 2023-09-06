@@ -1,16 +1,2 @@
 #!/bin/bash
-# Counter to keep track of lines
-count=1
-
-# Read input line by line
-while IFS= read -r line; do
-    # Check if the line number is odd
-    if ((count % 2 != 0)); then
-        echo "$line"
-    fi
-    # Increment the line counter
-    ((count++))
-done
-
-# Make sure to clear the counter for subsequent runs
-count=1
+paste -d, - - | cut -d, -f1
